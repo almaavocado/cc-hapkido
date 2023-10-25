@@ -1,80 +1,81 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
-import kidsClass from '../assets/kids-class.jpg'
-import adultClass from '../assets/adult-class.jpg'
+import { Link } from 'react-router-dom';
+import kicking from '../assets/program-cards/kicking.jpg'
+import punching2 from '../assets/program-cards/punching2.jpg'
+import selfDefense from '../assets/program-cards/selfdefense.jpg'
+import falling from '../assets/program-cards/falling.jpg'
+import sparring from '../assets/program-cards/sparring.jpg'
 
 const programsData = [
-    {
-      title: "Children's Class (White to Blue Belt)",
-      ageGroup: "5 to 9 year olds",
-      description:
-        "Our Children's Class is tailored for young martial artists who are at the White to Blue Belt levels. This program focuses on building a strong foundation in martial arts while instilling discipline, respect, and self-confidence. Through age-appropriate training, children will develop physical fitness, basic self-defense skills, and the principles of Song's Hapkido. In this class, we also introduce young martial artists to the art of kicking, teaching them how to execute kicks safely and effectively. Our experienced instructors create a safe and fun environment where kids can learn and grow.",
-      image: kidsClass,
-    },
+  {
+    title: "Kicking",
+    description:
+      "Our Kicking techniques are designed to help you master the art of effective kicks. Whether you're a beginner or have some experience, our classes cover a range of kicks, from the fundamental to advanced techniques. You'll improve your balance, flexibility, and self-defense skills, all while having a great time in a supportive and engaging environment.",
+    image: kicking,
+  },
+  {
+    title: "Punching",
+    description:
+      "We focus on developing powerful punches, precision striking, and effective combinations. This program is suitable for all skill levels, so whether you're new to martial arts or experienced, you'll benefit from improved coordination, self-confidence, and practical self-defense techniques. ",
+    image: punching2,
+  },
+  {
+    title: "Self-Defense",
+    description:
+      "Incorporating the Three Principles of Hapkido: Principle of Sum,  Water, and Circular Motion. Our Self-Defense program teaches students how to defend themselves using these principles, emphasizing non-resistance and effective circular motion techniques.",
+    image: selfDefense,
+  },
+  {
+    title: "Sparring",
+    description:
+      "Our Sparring focuses on the practical application of Hapkido techniques in a controlled and safe environment. Students learn how to apply their skills in real-life self-defense situations while developing quick reflexes and improving their overall martial arts abilities.",
+    image: sparring,
+  },
+  {
+    title: "Throwing Techniques",
+    description:
+      "Our Throwing Techniques focuses on the art of controlled throws, takedowns, and joint locks. Students will learn how to use an opponent's energy and movements to execute precise and effective throws while minimizing the risk of injury.",
+    image: "",
+  },
+  {
+    title: "Falling Techniques",
+    description:
+      "To avoid getting hurt, our falling techniques are designed to teach students how to safely and effectively fall or roll when thrown or taken down. These techniques are essential for self-preservation and injury prevention in martial arts and real-life situations.",
+    image: falling,
+  },
   
-    {
-      title: "Advanced Children's Class (Brown to Black Belt)",
-      ageGroup: "up to 12 year olds",
-      description:
-        "For our more experienced young martial artists holding Brown to Black Belts, we offer the Advanced Children's Class. This program is designed to refine their skills and deepen their understanding of Song's Hapkido. Advanced techniques, sparring, and advanced self-defense are core components of this class. In addition to advanced techniques, we focus on advanced kicking techniques, allowing students to expand their kicking repertoire. Our dedicated instructors work closely with each student to help them progress and achieve their goals in martial arts.",
-      image: kidsClass,
-    },
-  
-    {
-      title: "White to Blue Belt Preteen Class",
-      ageGroup: "10 to 13 year olds",
-      description:
-        "The White-Blue Belts Preteen Class is specially designed for young martial artists between the ages of 10 and 13 who are at the White to Blue Belt levels. This class provides a bridge between the Children's Class and the Adult Classes, offering age-appropriate training and challenges. Preteens will learn fundamental techniques, self-defense, and gain confidence in their abilities, including kicking techniques. Our instructors ensure a positive and motivating atmosphere for this age group, helping them develop a well-rounded skill set that includes kicks.",
-      image: kidsClass,
-    },
-  
-    {
-      title: "Adult Classes (All Belt Levels)",
-      ageGroup: "Ages 13+",
-      description:
-        "Our Adult Classes are open to individuals aged 13 and older, regardless of their belt level. Whether you're a complete beginner or an experienced martial artist, our Adult Classes cater to all skill levels. We focus on teaching practical self-defense techniques, improving physical fitness, and enhancing mental discipline. In this program, we cover a wide range of techniques, including kicks, to ensure that our students are well-rounded martial artists. It's a great opportunity to challenge yourself, stay fit, and learn effective self-defense skills in a supportive and encouraging environment.",
-      image: adultClass,
-    },
-  ];
-  
+];
 
-export default function Programs() {
-    return (
-        <div className="overflow-hidden bg-gray-100 py-24 sm:py-32">
-            <h1 className="text-4xl font-bold tracking-tight text-black sm:text-4xl mt-5 text-center">What We Offer</h1>
+export default function OurCurriculum() {
+  return (
+    <div className="overflow-hidden bg-gray-100 pt-6">
+      <h1 className="text-4xl font-bold tracking-tight text-black sm:text-4xl mt-8 text-center mb-8">
+        Our Curriculum
+      </h1>
 
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            {programsData.map((program, index) => (
-              <div
-                key={index}
-                className={`mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 ${
-                  index % 2 === 0 ? "" : "lg:flex-row-reverse"
-                }`}
-              >
-                <div className="lg:pr-8 lg:pt-4">
-                  <div className="lg:max-w-lg mt-9">
-                    <h2 className="text-base font-semibold leading-7 text-yellow-600">
-                      {program.ageGroup}
-                    </h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                      {program.title}
-                    </p>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
-                      {program.description}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex justify-center items-center">
-                  <img
-                    src={program.image}
-                    alt="Programs Screenshot"
-                    className="rounded-xl shadow-xl ring-1 ring-gray-400/10 h-[20rem] sm:w-[57rem] md:-ml-4 lg:-ml-0 object-cover"
-                    width={2432}
-                    height={1442}
-                  />
-                </div>
-              </div>
-            ))}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid gap-8 sm:grid-cols-3 sm:py-2">
+        {programsData.map((program, index) => (
+          <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden mb-15">
+            <img
+              src={program.image}
+              alt={`${program.title} Image`}
+              className="w-full h-60 object-cover"
+            />
+            <div className="p-4">
+              <h2 className="text-xl font-semibold text-gray-800">{program.title}</h2>
+              <p className="mt-2 text-sm text-gray-600">{program.description}</p>
+            </div>
           </div>
-        </div>
-    );
+        ))}
+        
+      </div>
+      <div className="flex justify-center mb-20">
+        <button className="bg-yellow-700 text-white rounded-full px-4 py-2 hover:bg-slate-500 transition-all duration-300 mt-20">
+          <Link to="/contact-us">Interested? Contact Us!</Link>
+        </button>
+      </div>
+      
+    </div>
+  );
 }

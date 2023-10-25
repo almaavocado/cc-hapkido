@@ -1,6 +1,9 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import logo from "../assets/hapkido-logo.png";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { AiFillYoutube } from "react-icons/ai";
+
 
 import {
   MenuAlt2Icon, // Update the import to BarsIcon as Bars3Icon
@@ -9,7 +12,8 @@ import {
   GlobeIcon,
   UserIcon,
   CalendarIcon,
-  PuzzleIcon
+  PuzzleIcon,
+  BookOpenIcon
 , // Update the import to XIcon as XMarkIcon
 } from '@heroicons/react/outline'; // Update the path to '@heroicons/react/outline'
 
@@ -18,19 +22,23 @@ import { ChevronDownIcon, PhoneIcon  } from '@heroicons/react/solid'; // Update 
 
 const aboutUsItems = [
   { name: 'What is Hapkido', href: '/hapkido', icon: GlobeIcon },
+  { name: 'Korean Phrases and Dojang Etiquette', href: 'dojang-etiquette', icon: BookOpenIcon},
   { name: 'Grandmaster',  href: '/grandmaster', icon: UserIcon },
   { name: 'Instructors',  href: '/instructors', icon: UserGroupIcon },
 
 ]
 
 const classesItems = [
-  { name: 'Our Programs', href: '/our-programs', icon: PuzzleIcon },
+  { name: 'Our Curriculum', href: '/our-curriculum', icon: PuzzleIcon },
   { name: 'Class Schedule',  href: '/class-schedule', icon: CalendarIcon },
 ]
 
-const callsToAction = [
-  { name: 'Contact Us', href: '/contact-us', icon: PhoneIcon },
-]
+const socialLinks = [
+  { icon: <FaInstagram />, link: 'https://www.instagram.com/songshapkidowestla' },
+  { icon: <AiFillYoutube />, link: 'https://youtube.com/@SongsHapkidoWLA?si=Tiu2iKtN-pjdvIYd' },
+  { icon: <FaFacebookF />, link: 'https://www.facebook.com/profile.php?id=61552570045697&mibextid=LQQJ4d' },
+  
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -42,7 +50,7 @@ export default function NavigationData() {
   return (
     <header className="bg-white">
        <nav className="mx-auto flex max-w-full items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div className="flex items-center">
+      <div className="flex items-center space-x-4 px-4">
         <a href="/" className="-m-1.5 p-1.5">
           <span className="sr-only">Song's Hapkido</span>
           <img className="h-20 w-auto" src={logo} alt="" />
@@ -58,7 +66,11 @@ export default function NavigationData() {
             <MenuAlt2Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
+        
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
+          <a href="/" className="px-4 text-lg font-semibold leading-6 text-gray-900 hover:text-yellow-600">
+            Home
+          </a>
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900">
               About Us
@@ -143,14 +155,33 @@ export default function NavigationData() {
           <a href="/media-gallery" className="text-lg font-semibold leading-6 text-gray-900 hover:text-yellow-600">
             Media Gallery
           </a>
+          {/*
+          
           <a href="/reviews" className="text-lg font-semibold leading-6 text-gray-900 hover:text-yellow-600">
             Reviews
           </a>
+                  */}
           <a href="/contact-us" className="text-lg font-semibold leading-6 text-gray-900 hover:text-yellow-600">
             Contact Us
           </a>
           <span className="mx-2"></span>
         </Popover.Group>
+
+        <div className="hidden lg:flex lg:gap-x-4">
+          {socialLinks.map((item, index) => (
+             <a
+             key={index}
+             href={item.link}
+             target="_blank"
+             rel="noopener noreferrer"
+             className="text-lg font-semibold text-gray-900 hover:text-white flex items-center gap-2"
+           >
+             <span className="p-2 rounded-full bg-[#efefef] hover:bg-red-800 transition duration-300">
+               {item.icon}
+             </span>
+           </a>
+          ))}
+        </div>
        
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -177,9 +208,16 @@ export default function NavigationData() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
+                <a
+                  href="/"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-yellow-600"
+                >
+                  Home
+                </a>
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
+                    
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                         About Us
                         <ChevronDownIcon
@@ -188,7 +226,7 @@ export default function NavigationData() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...aboutUsItems, ...callsToAction].map((item) => (
+                        {[...aboutUsItems].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
@@ -237,12 +275,14 @@ export default function NavigationData() {
                 >
                   Media Gallery
                 </a>
+                {/*
                 <a
                   href="/reviews"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-yellow-600"
                 >
                   Reviews
                 </a>
+                        */}
               </div>
               <div className="py-6">
                 <a
@@ -251,6 +291,23 @@ export default function NavigationData() {
                 >
                   Contact Us
                 </a>
+
+                <div className="py-2 flex gap-2 items-center">
+                  {socialLinks.map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg font-semibold text-gray-900 hover:text-white flex items-center gap-2"
+                    >
+                      <span className="p-2 rounded-full bg-[#efefef] hover:bg-red-800 transition duration-300">
+                        {item.icon}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+
               </div>
             </div>
           </div>

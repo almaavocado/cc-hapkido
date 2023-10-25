@@ -1,14 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/Home"; // Import your homepage component
-import AboutPage from "./components/About"; // Import other pages/components as needed
+import AboutPage from "./pages/About"; // Import other pages/components as needed
 import ContactUs from "./pages/ContactUs";
 import Reviews from './pages/Reviews';
 import Media from "./pages/Media";
 import Hapkido from './pages/Hapkido';
+import DojangEtiquette from "./pages/DojangEtiquette";
 import Grandmaster from './pages/Grandmaster';
-import Instructos from './pages/Instructors';
-import Programs from './pages/Programs';
+import Instructors from './pages/Instructors';
+import OurCurriculum from './pages/Programs';
 import ClassSchedule from './pages/Schedule';
 import AppFooter from "./shared/AppFooter";
 import Navbar from "./shared/Navbar";
@@ -31,8 +32,10 @@ const App = () => {
         <Route path="/media-gallery" element={<Media />} />
         <Route path="/hapkido" element={<Hapkido />} />
         <Route path="/grandmaster" element={<Grandmaster />} />
-        <Route path="/instructors" element={<Instructos />} />
-        <Route path="/our-programs" element={<Programs />} />
+        <Route path="/instructors" element={<Instructors />} />
+        <Route path="/our-curriculum" element={<OurCurriculum />} /> 
+        <Route path="/dojang-etiquette" element={<DojangEtiquette />} />
+
         {/* Add more routes for other pages */}
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/reviews" element={<Reviews />} />

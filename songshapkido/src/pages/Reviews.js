@@ -3,31 +3,29 @@ const reviewsData = [
   {
     text:
       "I've been training at Song's Hapkido for over a year now, and it's been an incredible journey. The instructors are highly skilled and patient, and they create a welcoming environment for everyone. I've not only improved my self-defense skills but also gained a sense of discipline and confidence. I highly recommend Song's Hapkido to anyone looking to learn martial arts.",
-    author: "John D",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    author: " A",
+    image:"a"
   },
   // Add more review objects as needed
   {
     text:
       "I've been training at Song's Hapkido for over a year now, and it's been an incredible journey. The instructors are highly skilled and patient, and they create a welcoming environment for everyone. I've not only improved my self-defense skills but also gained a sense of discipline and confidence. I highly recommend Song's Hapkido to anyone looking to learn martial arts.",
-    author: "John D",
+    author: "B",
+    image:"B" 
+   },
+  {
+    text:
+      "I've been training at Song's Hapkido for over a year now, and it's been an incredible journey. The instructors are highly skilled and patient, and they create a welcoming environment for everyone. I've not only improved my self-defense skills but also gained a sense of discipline and confidence. I highly recommend Song's Hapkido to anyone looking to learn martial arts.",
+    author: "C",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "C",
   },
   {
     text:
       "I've been training at Song's Hapkido for over a year now, and it's been an incredible journey. The instructors are highly skilled and patient, and they create a welcoming environment for everyone. I've not only improved my self-defense skills but also gained a sense of discipline and confidence. I highly recommend Song's Hapkido to anyone looking to learn martial arts.",
-    author: "John D",
+    author: "D",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-  {
-    text:
-      "I've been training at Song's Hapkido for over a year now, and it's been an incredible journey. The instructors are highly skilled and patient, and they create a welcoming environment for everyone. I've not only improved my self-defense skills but also gained a sense of discipline and confidence. I highly recommend Song's Hapkido to anyone looking to learn martial arts.",
-    author: "John D",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "D",
   },
 ];
 

@@ -14,29 +14,51 @@ export default function Example() {
         >
             
         </div>
-        <div className="mx-auto max-w-2xl text-center">
-          {/* Visit Us Container */}
-        <div className="bg-gray-200 rounded-md p-4 mb-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Visit Us</h2>
-          <h3 className="mt-2 text-2xl font-bold">4354 Sepulveda Blvd, Culver City, CA 90230</h3>
-        </div>
 
-        {/* Contact Us Container */}
-        <div className="bg-gray-200 rounded-md p-4 mb-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Us</h2>
-          <h3 className="mt-2 text-2xl font-bold">Phone: (310) 391-1714</h3>
-        </div>
+        <div className="mx-auto max-w-max text-center flex flex-wrap items-start justify-start">
+            <div className="w-full sm:w-1/2 p-4 text-left">
+                <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Studio Info</h2>
+                <p className="text-2xl font-semibold pt-6">4354 Sepulveda Blvd, Culver City, CA 90230</p>
+                <p className="text-2xl font-semibold pt-6">
+                    PHONE: <a href="tel:+13103911714">(310)-391-1714</a>
+                </p>
+                <p className="text-2xl font-semibold pt-6"></p>
+                <p><strong>MON-THURS:</strong> 5:00PM-8:00PM</p>
+                <p><strong>FRIDAY:</strong> 5:00PM-7:00PM</p>
+                <p><strong>SAT:</strong> 9:30AM-12:00PM</p>
+                <p><strong>SUN:</strong> CLOSED</p>
+            </div>
+            <div className="w-full sm:w-1/2 p-4">
+                {/* Google Maps Embed Code */}
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1169.400606596289!2d-118.40842555311399!3d34.003720958825056!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2ba16ff4e762b%3A0x71a3c26853c5f3e5!2s4354%20Sepulveda%20Blvd%2C%20Culver%20City%2C%20CA%2090230!5e0!3m2!1sen!2sus!4v1697833360275!5m2!1sen!2sus" 
+                width="400" 
+                height="350"
+                style={{ border: "0" }}
+                allowfullscreen=""
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Map"
+                ></iframe>
+            </div>
+            </div>
 
-        <div className="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
+
+            <div className="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
 
         
-        <h2 className="py-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Request Demonstration</h2>               
-            <p className="mt-2 text-lg leading-8 text-gray-600">
-            To request demonstration events fill out this form.
-            </p>
-        </div>
-        </div>
-        <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+        {/*
+            <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Special Request or Demonstration Inquiry</h2>               
+                <p className="py-2 text-lg text-center text-gray-600">
+                Fill out this form.
+                </p>
+            </div>
+            
+
+
+
+
+        <form action="#" method="POST" className="mx-auto mt-2 max-w-xl sm:mt-20">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
                 <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -138,7 +160,10 @@ export default function Example() {
             </button>
             </div>
         </form>
+  */}
+        
      
+    </div>
     </div>
    
   )

@@ -1,7 +1,7 @@
-import songAir from '../assets/song-air.png';
-import songFlip from '../assets/song-flip.png';
-import songMarine from '../assets/song-marine.jpeg';
-import grandMaster from '../assets/song-weapon.png';
+import songAir from '../assets/mastersong/song-air.png';
+import songFlip from '../assets/mastersong/song-flip.png';
+import songMarine from '../assets/mastersong/song-marine.jpeg';
+import grandMaster from '../assets/mastersong/song-weapon.png';
 
 const facts = [
     { name: '1970 - 1982', description: 'Grandmaster Song also served with the United Nations Command Headquarters for the United States Forces in Korea, Eighth Army.' },
